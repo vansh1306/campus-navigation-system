@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPES Campus Buildings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="2.png" type="image/jpeg">
+</head>
+
+<body
+    style="background-image: url('1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; margin: 0; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; height: auto; min-height: 90vh;">
+    <img src="3_.jpg" alt="Animated Image" class="animated-image">
+
+    <div class="top-text-container">
+        <h1>UPES Campus Map</h1>
+        <p>Navigate and explore your campus effortlessly</p>
+    </div>
+
+
+    <!-- Dropdown Selection for Present Location and Final Destination -->
+    <div>
+        <label for="present-location">Present Location:</label>
+        <select id="present-location" onchange="updateSelection()">
+            <option value="" selected disabled>Select present location</option>
+            <option value="gate">Gate</option>
+            <option value="admin-office">Admin Office</option>
+            <option value="hubble">Hubble</option>
+            <option value="block1">Block 1</option>
+            <option value="library">Library</option>
+            <option value="block2">Block 2</option>
+            <option value="block3">Block 3</option>
+            <option value="block4">Block 4</option>
+            <option value="gandhi-chowk">Gandhi Chowk</option>
+            <option value="block5">Block 5</option>
+            <option value="design-block">Design Block</option>
+            <option value="food-court">Food Court</option>
+            <option value="mac-gym">MAC/GYM</option>
+            <option value="block9">Block 9</option>
+            <option value="block10">Block 10</option>
+            <option value="block11">Block 11</option>
+            <option value="ground-block">Ground</option>
+            <option value="tulips">Tulip</option>
+            <option value="block12">Block 12</option>
+            <option value="old-amphitheater">Old Amphitheater</option>
+            <option value="new-amphitheater">New Amphitheater</option>
+        </select>
+
+        <label for="final-destination">Final Destination:</label>
+        <select id="final-destination" onchange="updateSelection()">
+            <option value="" selected disabled>Select final destination</option>
+            <option value="gate">Gate</option>
+            <option value="admin-office">Admin Office</option>
+            <option value="hubble">Hubble</option>
+            <option value="block1">Block 1</option>
+            <option value="library">Library</option>
+            <option value="block2">Block 2</option>
+            <option value="block3">Block 3</option>
+            <option value="block4">Block 4</option>
+            <option value="gandhi-chowk">Gandhi Chowk</option>
+            <option value="block5">Block 5</option>
+            <option value="design-block">Design Block</option>
+            <option value="food-court">Food Court</option>
+            <option value="mac-gym">MAC/GYM</option>
+            <option value="block9">Block 9</option>
+            <option value="block10">Block 10</option>
+            <option value="block11">Block 11</option>
+            <option value="ground-block">Ground</option>
+            <option value="tulips">Tulip</option>
+            <option value="block12">Block 12</option>
+            <option value="old-amphitheater">Old Amphitheater</option>
+            <option value="new-amphitheater">New Amphitheater</option>
+        </select>
+    </div>
+
+    <!-- Campus Map -->
+    <div class="map">
+        <!-- Building Elements with Click Event -->
+        <div class="building gate" onclick="selectBlock('gate')">Gate</div>
+        <div class="building admin-office" onclick="selectBlock('admin-office')">
+            <div class="roof"></div>
+            <div class="walls">Admin Office</div>
+        </div>
+        <div class="building hubble" onclick="selectBlock('hubble')">
+            <div class="roof"></div>
+            <div class="walls">Hubble</div>
+        </div>
+        <div class="building block1" onclick="selectBlock('block1')">
+            <div class="roof"></div>
+            <div class="walls">Block 1</div>
+        </div>
+        <div class="building library" onclick="selectBlock('library')">
+            <div class="roof"></div>
+            <div class="walls">Library</div>
+        </div>
+        <div class="building block2" onclick="selectBlock('block2')">
+            <div class="roof"></div>
+            <div class="walls">Block 2</div>
+        </div>
+        <div class="building block3" onclick="selectBlock('block3')">
+            <div class="roof"></div>
+            <div class="walls">Block 3</div>
+        </div>
+        <div class="building block4" onclick="selectBlock('block4')">
+            <div class="roof"></div>
+            <div class="walls">Block 4</div>
+        </div>
+        <div class="building gandhi-chowk" onclick="selectBlock('gandhi-chowk')">Gandhi Chowk</div>
+        <div class="building block5" onclick="selectBlock('block5')">
+            <div class="roof"></div>
+            <div class="walls">Block 5</div>
+        </div>
+        <div class="building design-block" onclick="selectBlock('design-block')">
+            <div class="roof"></div>
+            <div class="walls">Design Block</div>
+        </div>
+        <div class="building food-court" onclick="selectBlock('food-court')">
+            <div class="roof"></div>
+            <div class="walls">Food Court</div>
+        </div>
+        <div class="building mac-gym" onclick="selectBlock('mac-gym')">
+            <div class="roof"></div>
+            <div class="walls">MAC/GYM</div>
+        </div>
+        <div class="building block9" onclick="selectBlock('block9')">
+            <div class="roof"></div>
+            <div class="walls">Block 9</div>
+        </div>
+        <div class="building block10" onclick="selectBlock('block10')">
+            <div class="roof"></div>
+            <div class="walls">Block 10</div>
+        </div>
+        <div class="building block11" onclick="selectBlock('block11')">
+            <div class="roof"></div>
+            <div class="walls">Block 11</div>
+        </div>
+        <div class="building ground-block" onclick="selectBlock('ground-block')">
+            <div class="roof"></div>
+            <div class="walls">Ground</div>
+        </div>
+        <div class="building tulips" onclick="selectBlock('tulips')">
+            <div class="roof"></div>
+            <div class="walls">Tulip</div>
+        </div>
+        <div class="building block12" onclick="selectBlock('block12')">
+            <div class="roof"></div>
+            <div class="walls">Block 12</div>
+        </div>
+        <div class="building old-amphitheater" onclick="selectBlock('old-amphitheater')">
+            <div class="roof"></div>
+            <div class="walls">Old Amphitheater</div>
+        </div>
+        <div class="building new-amphitheater" onclick="selectBlock('new-amphitheater')">
+            <div class="roof"></div>
+            <div class="walls">New Amphitheater</div>
+        </div>
+    </div>
+    <br>
+    <!-- Distance Calculation Result -->
+    <div id="distance-result-container">
+        <section id="distance-result">
+            <h2>Distance Between Selected Locations:</h2>
+            <p id="distance">Please select two blocks to calculate the distance.</p>
+        </section>
+
+        <!-- Find Shortest Path Button -->
+        <button id="find-path-btn">Find Shortest Path</button>
+        <br>
+        <!-- Reset Button -->
+        <button onclick="resetSelection()">Reset Selection</button>
+    </div>
+
+    <br>
+    <div class="about-upes">
+        <h2>About UPES</h2>
+        <p>UPES is a world-class university that offers a wide range of courses and programs.</p>
+
+        <div class="media-container">
+            <div class="map-container">
+                <h3>Upes Google Map</h3> <!-- Title above the map -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2440.2544831518453!2d77.96877820959749!3d30.416873442526622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1732783563521!5m2!1sen!2sin"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="video-container">
+                <h3>Video Content</h3> <!-- Title above the video -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UQg_oLCNYc0?si=6iy7sYJzWNPLKdB9"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; Copyright : UPES 2024</p>
+        <p>Visit our official website: <a href="https://www.upes.ac.in/" target="_blank"
+                rel="noopener noreferrer">www.upes.ac.in</a></p>
+    </footer>
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
